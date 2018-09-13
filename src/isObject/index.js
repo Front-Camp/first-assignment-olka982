@@ -7,8 +7,9 @@
  * isObject([]);   // false
  * isObject(null); // false
  */
-const isObject = data => {
-  /* your logic here...*/
-};
+ const isObject = data => {
+   return (!!data && typeof data === 'object' && !Array.isArray(data));
+ };
+
 
 export default isObject;

@@ -10,8 +10,15 @@
  * sumElements(['1', 'hi', 3]);     // 4
  * sumElements([Infinity, NaN, 1]); // 1
  */
-const sumElements = arr => {
-  /* your logic here...*/
-};
+ const sumElements = arr => {
+   return arr.reduce((prev, curr) => {
+     var check = parseFloat(curr) || Number(curr);
+     if (typeof check == Number || !isFinite(check)) return prev;
+     var check2 = parseFloat(prev) || Number(prev);
+     if (typeof check2 == Number || !isFinite(check2)) return curr;
+     return parseFloat(prev) + check;
+   });
+ };
+
 
 export default sumElements;
